@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Miloš Bogosavljević · Resume</title>
+<meta name="author" content="Miloš Bogosavljević">
+<meta name="description" content="Senior frontend developer with five years of Next.js in production. Owned cashier and player dashboard at iGamingPlatform.">
+<meta name="keywords" content="Frontend, React, TypeScript, Next.js, Resume">
+<meta name="generator" content="Kami">
+<style>
+  @font-face { font-family: "JetBrains Mono"; src: url("../fonts/JetBrainsMono.woff2") format("woff2"); font-weight: 400; font-style: normal; }
+  @font-face { font-family: "JetBrains Mono"; src: url("../fonts/JetBrainsMono.woff2") format("woff2"); font-weight: 500; font-style: normal; }
+
+  @page {
+    size: A4;
+    margin: 11mm 13mm 11mm 13mm;
+    background: #f5f4ed;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --parchment: #f5f4ed;
+    --ivory:     #faf9f5;
+    --border:    #e8e6dc;
+    --border-soft: #e5e3d8;
+    --near-black: #141413;
+    --dark-warm: #3d3d3a;
+    --olive:     #504e49;
+    --stone:     #6b6a64;
+    --brand:     #1B365D;
+    --brand-tint: #EEF2F7;
+
+    --serif: Charter, Georgia,
+             Palatino, "Times New Roman", serif;
+    --sans: var(--serif);
+    --mono:  "JetBrains Mono", "SF Mono", "Fira Code",
+             Consolas, Monaco, monospace;
+  }
+
+  html, body { background: var(--parchment); }
+
+  @media screen {
+    body { max-width: 210mm; margin: 0 auto; padding: 11mm 13mm; }
+  }
+
+  body {
+    color: var(--near-black);
+    font-family: var(--serif);
+    font-size: 10pt;
+    line-height: 1.5;
+    letter-spacing: 0;
+    widows: 3;
+    orphans: 3;
+  }
+
+  .serif { font-family: var(--serif); }
+  .mono  { font-family: var(--mono); }
+
+  a { color: var(--brand); text-decoration: none; }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 6mm;
+    padding-bottom: 2.3mm;
+    border-bottom: 0.6pt solid var(--border);
+  }
+  .header > div:first-child { flex-shrink: 0; }
+  .name {
+    font-family: var(--serif);
+    font-size: 26pt;
+    font-weight: 500;
+    letter-spacing: -0.2pt;
+    color: var(--near-black);
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 3mm;
+    white-space: nowrap;
+  }
+  .alias {
+    font-size: 12.5pt;
+    font-weight: 400;
+    color: var(--stone);
+  }
+  .contact {
+    text-align: right;
+    font-size: 9pt;
+    color: var(--stone);
+    line-height: 1.5;
+  }
+  .contact .role {
+    color: var(--brand);
+    font-size: 10.5pt;
+    font-weight: 500;
+  }
+  .contact .sep { color: var(--border); margin: 0 0.4em; }
+  .contact a { color: var(--dark-warm); }
+  .contact .loc { color: var(--olive); font-weight: 500; }
+
+  /* METRICS */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 5mm;
+    margin-bottom: 5mm;
+  }
+  .metric {
+    padding: 1mm 0 1.2mm;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7mm;
+    min-width: 0;
+    break-inside: avoid;
+  }
+  .metric-value {
+    font-family: var(--serif);
+    font-size: 13pt;
+    font-weight: 500;
+    color: var(--brand);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .metric-value .unit {
+    font-size: 10.5pt;
+    margin-left: 0.5mm;
+    font-weight: 500;
+    color: var(--brand);
+  }
+  .metric-label {
+    font-size: 9pt;
+    color: var(--olive);
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .metrics--stack .metric {
+    gap: 0.5mm;
+    padding-bottom: 2mm;
+    border-bottom: 0.3pt dotted var(--border);
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: var(--serif);
+    font-size: 13pt;
+    font-weight: 500;
+    color: var(--near-black);
+    border-bottom: 0.5pt solid var(--border);
+    padding: 0 0 1mm 0;
+    margin: 9mm 0 3mm 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2.5mm;
+  }
+  .section-title .sub {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 9pt;
+    color: var(--stone);
+    letter-spacing: 0.2pt;
+  }
+  section:first-of-type .section-title { margin-top: 0; }
+  .page-break > .section-title { margin-top: 0; }
+
+  /* SUMMARY */
+  .summary { font-size: 10pt; line-height: 1.5; color: var(--near-black); }
+  .summary .hl { color: var(--brand); }
+
+  /* TIMELINE */
+  .timeline { display: flex; gap: 7mm; margin-bottom: 9mm; }
+  .tl-step { flex: 1; padding: 0.8mm 0; break-inside: avoid; }
+  .tl-top {
+    display: flex; align-items: baseline; gap: 2mm;
+    margin-bottom: 0.6mm;
+  }
+  .tl-year {
+    font-family: var(--serif);
+    font-size: 11pt; font-weight: 500;
+    color: var(--brand); line-height: 1;
+  }
+  .tl-head {
+    font-size: 11pt; font-weight: 500;
+    color: var(--near-black);
+  }
+  .tl-body { font-size: 9pt; color: var(--olive); line-height: 1.45; }
+
+  /* PROJECTS */
+  .project {
+    padding: 4.8mm 0;
+    break-inside: avoid;
+  }
+  .project:first-of-type {
+    padding-top: 1.6mm;
+  }
+  .proj-head {
+    display: block; margin-bottom: 0.9mm;
+  }
+  .proj-name {
+    font-family: var(--serif);
+    font-size: 11pt; font-weight: 500; color: var(--near-black);
+  }
+  .proj-kind { font-size: 11pt; color: var(--olive); margin-left: 1.5mm; }
+  .proj-role {
+    font-size: 9pt; color: var(--brand); font-weight: 500;
+    float: right; background: #EEF2F7;
+    padding: 0.4mm 1.6mm; border-radius: 2pt; letter-spacing: 0.3pt;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .proj-lines { display: table; width: 100%; }
+  .proj-row { display: table-row; }
+  .proj-label {
+    display: table-cell; width: 16mm;
+    font-size: 9pt; color: var(--brand);
+    font-weight: 500; letter-spacing: 0.4pt;
+    text-transform: uppercase;
+    padding: 0.4mm 0 0.4mm 0; vertical-align: top;
+  }
+  .proj-text {
+    display: table-cell; font-size: 10pt;
+    color: var(--near-black); line-height: 1.5;
+    padding: 0 0 0.4mm 1mm;
+  }
+  .proj-text .hl { color: var(--brand); }
+
+  /* PAGE 2 FORCE BREAK */
+  .page-break { break-before: page; }
+
+  /* OPEN SOURCE */
+  .os-intro {
+    font-size: 9.4pt; line-height: 1.45;
+    color: var(--near-black);
+    margin: 1.6mm 0 2.4mm 0;
+    break-inside: avoid;
+  }
+  .os-intro .hl { color: var(--brand); }
+  .os-intro .strong { color: var(--near-black); font-weight: 500; }
+
+  .os-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 9mm; row-gap: 1.2mm;
+  }
+  .os-item {
+    display: flex; align-items: baseline;
+    gap: 2.5mm; padding: 1.2mm 0;
+    border-bottom: 0.3pt dotted var(--border);
+    break-inside: avoid;
+  }
+  .os-item:last-child,
+  .os-item:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+  .os-name {
+    font-family: var(--serif);
+    font-size: 10.5pt; font-weight: 500;
+    flex-shrink: 0; min-width: 18mm;
+  }
+  .os-name a { color: var(--brand); }
+  .os-desc { font-size: 9pt; color: var(--olive); line-height: 1.4; flex: 1; }
+  .os-star {
+    font-size: 9pt; color: var(--dark-warm);
+    font-weight: 500; white-space: nowrap;
+    flex-shrink: 0; min-width: 10mm; text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .os-star.big { color: var(--brand); font-size: 9.2pt; }
+
+  .os-highlight {
+    margin-top: 2.5mm;
+    padding: 1.8mm 3mm;
+    background: var(--ivory);
+    border-radius: 2pt;
+    font-size: 9pt; line-height: 1.45;
+    color: var(--near-black);
+    break-inside: avoid;
+  }
+  .os-highlight .hl { color: var(--brand); }
+  .os-highlight .tag {
+    display: inline-block;
+    background: transparent; color: var(--brand);
+    font-size: 9pt; font-weight: 500;
+    padding: 0; border-radius: 0;
+    margin-right: 1.5mm; letter-spacing: 0.6pt;
+    text-transform: uppercase;
+    transform: none;
+  }
+
+  /* CONVICTIONS */
+  .convictions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3mm;
+    margin-top: 1.4mm;
+  }
+  .conv-card { padding: 0 2mm 0 0; break-inside: avoid; }
+  .conv-head {
+    font-family: var(--serif);
+    font-size: 10pt; font-weight: 500;
+    color: var(--near-black); margin-bottom: 1mm;
+    display: flex; align-items: baseline; gap: 2mm;
+  }
+  .conv-head .year {
+    color: var(--brand); font-weight: 500;
+    font-size: 9pt;
+    font-variant-numeric: tabular-nums;
+  }
+  .conv-body {
+    font-size: 9pt; color: var(--olive);
+    line-height: 1.45;
+  }
+  .conv-body .hl { color: var(--brand); }
+
+  /* IMPACT */
+  .handle-strip {
+    padding: 0; margin: 1.4mm 0 2mm 0;
+    display: flex; align-items: baseline; gap: 3.5mm;
+    break-inside: avoid;
+  }
+  .handle-strip .handle {
+    font-family: var(--serif);
+    font-size: 10pt; font-weight: 500; color: var(--brand);
+    flex-shrink: 0;
+  }
+  .handle-strip .follower { font-size: 9pt; color: var(--stone); flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .handle-strip .desc { font-size: 9pt; color: var(--olive); line-height: 1.45; flex: 1; }
+
+  .impact-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 6mm; }
+  .inf-block-title {
+    margin-top: 2.5mm;
+    font-family: var(--serif);
+    font-size: 10pt; font-weight: 500;
+    color: var(--near-black);
+    margin-bottom: 1.5mm; padding-bottom: 0.5mm;
+    border-bottom: 0.3pt dotted var(--border);
+    display: flex; align-items: baseline; gap: 2mm;
+  }
+  .inf-block-title .small {
+    font-family: var(--sans);
+    font-size: 9pt; color: var(--stone);
+    font-weight: 400;
+  }
+  .art-row {
+    padding: 1.8mm 0;
+    border-bottom: 0.3pt dotted var(--border-soft);
+  }
+  .talk-row {
+    display: flex; justify-content: space-between;
+    align-items: flex-start;
+    gap: 2mm; padding: 1.8mm 0;
+    border-bottom: 0.3pt dotted var(--border-soft);
+  }
+  .art-row:last-of-type, .talk-row:last-of-type { border-bottom: none; }
+  .art-header {
+    display: flex; align-items: baseline;
+    justify-content: space-between;
+    gap: 2mm;
+  }
+  .art-title, .talk-title {
+    font-size: 9.2pt; color: var(--near-black);
+    font-weight: 500; line-height: 1.4;
+    flex: 1 1 auto; min-width: 0;
+  }
+  .art-stats, .talk-venue {
+    font-size: 9pt; color: var(--stone);
+    line-height: 1.4; margin-top: 0.6mm;
+    white-space: nowrap;
+  }
+  .art-stats .em-brand { color: var(--brand); }
+  .art-date, .talk-date {
+    font-size: 9pt; color: var(--stone);
+    font-variant-numeric: tabular-nums;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  /* SKILLS */
+  .skill-row {
+    display: flex; gap: 3mm; padding: 1.8mm 0;
+    border-bottom: 0.3pt dotted var(--border);
+    align-items: baseline;
+  }
+  .skill-row:last-of-type { border-bottom: none; }
+  .skill-label {
+    font-size: 9pt; font-weight: 500;
+    color: var(--brand); letter-spacing: 0.5pt;
+    text-transform: uppercase;
+    width: 32mm; flex-shrink: 0;
+    line-height: 1.35;
+  }
+  .skill-body { font-size: 10pt; color: var(--near-black); line-height: 1.5; flex: 1; }
+  .skill-body .em-brand { color: var(--brand); }
+
+  .no-break { break-inside: avoid; }
+
+  /* EDUCATION */
+  .edu-row {
+    display: flex; justify-content: space-between;
+    align-items: baseline; padding: 1.8mm 0;
+  }
+  .edu-row .school {
+    font-family: var(--serif);
+    font-weight: 500; font-size: 11pt;
+  }
+  .edu-row .major { color: var(--olive); font-size: 9.4pt; }
+  .edu-row .date { color: var(--stone); font-variant-numeric: tabular-nums; font-size: 9pt; }
+
+  /* TABLE (kami-table) */
+  table, .kami-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+    margin: 6pt 0;
+    break-inside: avoid;
+  }
+  table th, .kami-table th {
+    text-align: left;
+    font-weight: 500;
+    color: var(--dark-warm);
+    padding: 5pt 6pt;
+    border-bottom: 0.6pt solid var(--border);
+    background: transparent;
+  }
+  table td, .kami-table td {
+    padding: 4pt 6pt;
+    border-bottom: 0.25pt solid var(--border);
+    vertical-align: top;
+  }
+  table.compact th, .kami-table.compact th { padding: 3pt 4pt; font-size: 8pt; }
+  table.compact td, .kami-table.compact td { padding: 2.5pt 4pt; font-size: 8pt; line-height: 1.4; }
+  table.financial td:not(:first-child), .kami-table.financial td:not(:first-child) {
+    text-align: right; font-variant-numeric: tabular-nums;
+  }
+  table.financial th:not(:first-child), .kami-table.financial th:not(:first-child) { text-align: right; }
+  table.striped tbody tr:nth-child(even) td, .kami-table.striped tbody tr:nth-child(even) td {
+    background: var(--ivory);
+  }
+  table .total td, .kami-table .total td {
+    font-weight: 500; border-top: 0.6pt solid var(--border); border-bottom: none; color: var(--near-black);
+  }
+
+  /* DENSE VARIANT: add class="resume--dense" to <body> when 5+ projects overflow */
+  body.resume--dense { font-size: 9pt; }
+  body.resume--dense .proj-text { line-height: 1.4; }
+  body.resume--dense .project { padding: 1.6mm 0; }
+  body.resume--dense .section-title { margin-top: 4.2mm; margin-bottom: 1.5mm; }
+
+  section:not(.page-break) .project { padding: 8.6mm 0; }
+  .page-break .project { padding: 9mm 0; }
+  .page-break + section .section-title,
+  .page-break + section + section .section-title { margin-top: 16mm; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="name serif">Miloš Bogosavljević</div>
+  </div>
+  <div class="contact">
+    <span class="role">Senior Frontend Developer</span>
+    <br>
+    <a href="mailto:milosnkbogosavljevic@gmail.com">milosnkbogosavljevic@gmail.com</a>
+    <span class="sep">·</span>
+    <span>+382 67 206 176</span>
+    <br>
+    <a href="https://github.com/Milos97">github.com/Milos97</a>
+    <span class="sep">·</span>
+    <a href="https://linkedin.com/in/milos-bogosavljevic-17143b152">LinkedIn</a>
+    <br>
+    <span class="loc">Podgorica, Montenegro</span>
+  </div>
+</div>
+
+<div class="metrics">
+  <div class="metric"><span class="metric-value serif">6+ yrs</span><span class="metric-label">React &amp; TypeScript</span></div>
+  <div class="metric"><span class="metric-value serif">5 yrs</span><span class="metric-label">Next.js production</span></div>
+  <div class="metric"><span class="metric-value serif">3</span><span class="metric-label">Player surfaces</span></div>
+  <div class="metric"><span class="metric-value serif">2021–26</span><span class="metric-label">Cashier tenure</span></div>
+</div>
+
+<section>
+  <div class="section-title">Summary</div>
+  <div class="summary">
+    Senior frontend developer with six years in React and TypeScript, including <span class="hl">five years of Next.js</span> in production. Owned cashier and player dashboard at iGamingPlatform: deposit, withdraw, balances, and the game lobby. AI is in the daily flow for planning, design, code, tests, and review. Automation runs with a <span class="hl">human check</span>, and I keep ownership of what ships.
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Experience<span class="sub">May 2021 – Mar 2026 · iGamingPlatform</span></div>
+
+  <div class="timeline">
+    <div class="tl-step">
+      <div class="tl-top"><div class="tl-year serif">2019</div><div class="tl-head">Training</div></div>
+      <div class="tl-body">PHP and React training, then a personal app in React, Node.js, and MongoDB.</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-top"><div class="tl-year serif">2020</div><div class="tl-head">Admin tools</div></div>
+      <div class="tl-body">Operator UIs for CMS, DMS, and RMS, including a legacy frontend refactor.</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-top"><div class="tl-year serif">2021</div><div class="tl-head">Ownership</div></div>
+      <div class="tl-body">Five years owning cashier and player dashboard on live iGaming traffic.</div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">Cashier &amp; dashboard</span>
+      <span class="proj-kind">· iGamingPlatform · May 2021 – Mar 2026</span>
+      <span class="proj-role">Owner</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">Role</div>
+        <div class="proj-text">Accountable owner of the player money path at iGamingPlatform: deposit, withdraw, balances, and transaction history on live traffic.</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">Actions</div>
+        <div class="proj-text">Integrated payment providers over REST, including loading, error, and retry states. Profiled LCP, bundle size, unused JavaScript, and re-renders with Chrome DevTools and Lighthouse, then applied code splitting, route-level lazy loading, and React Query caching. Covered deposit, withdraw, and dashboard regressions with Cypress and Jest in CI.</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">Impact</div>
+        <div class="proj-text">Deposit, withdraw, balances, and history stayed in production for the full <span class="hl">May 2021 – Mar 2026</span> tenure. Players used that money path in each session. Frontend releases shipped as Docker images on the existing Kubernetes pipelines.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">Game lobby</span>
+      <span class="proj-kind">· iGamingPlatform · May 2021 – Mar 2026</span>
+      <span class="proj-role">Shipped</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">Role</div>
+        <div class="proj-text">Game discovery and launch at iGamingPlatform, shipped beside the cashier, including integration with third-party game providers.</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">Actions</div>
+        <div class="proj-text">Built discovery and launch flows and wired providers over REST, with loading, error, and retry states. Delivered responsive layouts and localized copy for multiple markets.</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">Impact</div>
+        <div class="proj-text">Players in localized markets could discover providers and launch games from the lobby on <span class="hl">live traffic</span>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-break">
+  <div class="section-title">Selected work<span class="sub">Fitto · Sep 2026</span></div>
+
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">Fitto</span>
+      <span class="proj-kind">· personal trainer · Sep 2026</span>
+      <span class="proj-role">Design</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">Role</div>
+        <div class="proj-text">A product for a personal trainer, from the product rules to an Expo screen mock. One person.</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">Actions</div>
+        <div class="proj-text">AI drafted the plan, the screen structure, and the UI code. Each product rule was reviewed before it stayed: the app <span class="hl">does not diagnose</span>, the trainer assigns the plan, and the client does not move the session.</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">Impact</div>
+        <div class="proj-text">Phase 0 is the name, the visual direction, and the mock of today, clients, calendar, plan, and chat. Accounts, a database, and clients are not in this phase. The speed was reaching a reviewable product, with the decisions kept.</div>
+      </div>
+    </div>
+  </div>
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">Admin platforms</span>
+      <span class="proj-kind">· Amplitudo · Jul 2020 – May 2021</span>
+      <span class="proj-role">Junior</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">Role</div>
+        <div class="proj-text">Junior frontend seat on CMS, DMS, and RMS admin tools used daily by operators, plus legacy screens on enterprise and outsourcing work.</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">Actions</div>
+        <div class="proj-text">Built data-heavy tables, forms, and internal tools on top of backend APIs. Refactored legacy frontend so existing operator screens were easier to change.</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">Impact</div>
+        <div class="proj-text">Operators kept working in the CMS, DMS, and RMS admin surfaces after the legacy refactor.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section>
+  <div class="section-title">Core Skills</div>
+  <div class="skill-row">
+    <div class="skill-label">AI flow</div>
+    <div class="skill-body">Daily flow for planning, design, code, tests, and review. Automation with a <span class="em-brand">human check</span> on every output. I keep ownership of what ships.</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">Frontend</div>
+    <div class="skill-body">React, TypeScript, and <span class="em-brand">five years of Next.js</span> in production. Vite, Webpack, and Git. Docker images on existing Kubernetes pipelines.</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">State &amp; data</div>
+    <div class="skill-body"><span class="em-brand">TanStack Query</span> caching on cashier and dashboard, plus Redux, MobX, Zustand, and Jotai. Axios carried REST calls to payment and game providers.</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">Testing</div>
+    <div class="skill-body">Cypress end-to-end and component tests, plus Jest, for cashier, deposit, withdraw, and dashboard regressions. Those tests ran <span class="em-brand">in CI before release</span>.</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">Interface</div>
+    <div class="skill-body">SCSS, Styled-components, Tailwind, Material UI, Chakra UI, and Ant Design, with Figma for UI. Responsive layouts and <span class="em-brand">i18n across markets</span>.</div>
+  </div>
+</section>
+
+<section class="no-break">
+  <div class="section-title">Education</div>
+  <div class="edu-row">
+    <div>
+      <span class="school serif">University of Montenegro</span>
+      <span class="major"> · Faculty of Sciences and Mathematics · B.Sc. Computer and Information Sciences</span>
+    </div>
+    <div class="date">2020</div>
+  </div>
+</section>
+
+</body>
+</html>
